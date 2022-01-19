@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=4, fig.height=4)
 library(tidyverse)
 ```
 
-# Sample Solution to the test case 
+## Sample Solution to the test case 
 
 ## A test case
 
@@ -154,7 +154,7 @@ canada_fixed %>%
 
 ## How reproducible is this solution?
 
-1. Navigate to https://github.com/yumouqiu/Data-Science-202-ISU
+1. Navigate to https://yumouqiu.github.io/DS202-Spring2022/
 2. Open the folder `01_collaborative-environment` and download the file `02_test-case-solution.Rmd`
 3. Open the file in RStudio.
 4. "Knit" the file.

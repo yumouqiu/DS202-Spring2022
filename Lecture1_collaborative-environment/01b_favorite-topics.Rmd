@@ -12,7 +12,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
-# Vote on topics
+
+## Vote data on topics
 
 
 ## ... this is what wufoo tells us
