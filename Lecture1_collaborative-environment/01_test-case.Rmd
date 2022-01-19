@@ -1,5 +1,5 @@
 ---
-title: "DS 202 - Working in teams"
+title: "DS 202 - Reproducibility of Your Work"
 author: "Yumou Qiu"
 ratio: 16x10
 output:
@@ -11,7 +11,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Tools for collaborating in teams
+## Tools for Reproducibility
 
 
 ## A test case
@@ -20,7 +20,7 @@ This is a two-part exercise:
 
 **Part 1:** Analyze + document
 
-**Part 2:** Swap + discuss
+**Part 2:** Swap + discuss (after class)
 
 
 ## Part 1: Analyze + document
@@ -40,6 +40,7 @@ collaborator to reproduce your work starting with the original dataset
 <img src="images/blue.jpeg" class="cover" height=1500>
 
 1. <font color="white">Visualize life expectancy over time for Canada in the 1950s and 1960s using a line plot.</font>
+2. <font color="white">Document your result.</font>
 
 
 ## Your turn: analyze + document (20 mins) {.white}
@@ -55,18 +56,17 @@ as `999999`, it should actually be `69.96`. Make this correction.</font>
 <font color="white">*Pro goal:* Add lines for Mexico and the United States.</font>
 </p>
 
-## Part 2: swap + discuss (20 mins) {.white}
+## Part 2: swap + discuss (after class homework) {.white}
 
 <img src="images/blue.jpeg" class="cover" height=1500>
 
 1. <font color="white">Introduce yourself to the team closest to you.</font>
-2. <font color="white">Swap instructions / documentation with the other team, and try to reproduce 
-their work, first **without talking to each oher**. </font>
+2. <font color="white">Email your instructions / documentation to the other team member. Your team member should try to reproduce 
+your work, first **without talking to each oher**. </font>
 <br>
-<font color="white">If your collaborator does not have/know the software they need to reproduce your work,  walk them through it on your computer 
-in a way that would emulate the experience. (Remember, this could be part of the
+<font color="white">If your collaborator does not have/know the software they need to reproduce your work,  walk them through it in a way that would emulate the experience. (Remember, this could be part of the
 irreproducibility problem!)</font>
-3. <font color="white">Then, talk to each other about challenges you faced (or didn't face) or why you were or weren't able to reproduce their work.</font>
+3. <font color="white">Then, write down the challenges you faced (or didn't face) or why you were or weren't able to reproduce their work.</font>
 
 
 <!--- <br><br>
