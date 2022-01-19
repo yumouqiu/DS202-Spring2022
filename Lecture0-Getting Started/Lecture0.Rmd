@@ -9,7 +9,8 @@ output:
     theme: ribbon
 ---
 
-# Data Acquisition and Exploratory Data Analysis
+## Data Acquisition and Exploratory Data Analysis
+
 
 ## What is this course about?
 
@@ -160,39 +161,35 @@ Full syllabus is available from Canvas.
 
 ### Course website: 
 - Canvas: materials, assignments, code and grading
-- https://yumouqiu.github.io/Data-Science-202-ISU/: lectures
+- https://yumouqiu.github.io/DS202-Spring2022/: lectures
 
 ## Grades
 
 | Component | Weight |
 |:-- | --:|
-| Homework | 20% |
-| Labs | 20% |
-| Midterm | 25% |
-| Participation | 5% |
-| **Final Project** | |
-|   report | 25% |
-|   presentation | 5% |
+| Homework | 35% |
+| Midterm | 30% |
+| Final Project | 35% |
 
 
-## Labs
+## In-class practice
 
-- during class time on every other Thursday (starting for the second week of class) 
-- you will be partnered (randomly) in groups of 2 to 3
-- lab assignments are designed to be finished during class time, but 'final finishing time' can be applied until the following Monday, 10pm. 
-- if you cannot attend the lab, please let me know beforehand. Nevertheless, you are expected to do the work!
+- in-class coding practice
+- data analysis: during class time on every other Thursday (starting for the second week of class) 
+
 
 ## Homework
 
-- in weeks without a lab, a homework is posted.
+- homework will be posted every week.
 - homework assignments revise what we covered, plus synthesize some new information.
 - plan to spend about 3-4h on each assignment.
 
 ## Midterm
 
-- in-class programming exam.
+- take-home programming exam.
+- limited time.
 - open book, open note, open internet (no direct help from anyone else).
-- tentatively scheduled before the Thanksgiving.
+- tentatively scheduled before the Spring break.
 - sample exams will be posted as we get closer to the date.
 
 <!--- ## Mini-project
@@ -212,16 +209,7 @@ Full syllabus is available from Canvas.
     * identify line of inquiry
     * report findings in report or shiny app
     * present your project in front of the class
-
-## Participation and Attendance
-
-I expect you to attend class: there will be a substantial amount of time devoted to 'hands-on' examples on the computers. Make use of that time!
-
-If you have to miss class, please 
-
-(a) let me know ahead of time. 
-(b) One point (out of total 10 points) will be taken off each time when missing one lecture without a proper reason.
-(c) make sure to catch up with the material (e.g. have a designated note taker, talk to one of your team members, ... )
+    
 
 ## Getting Help
 
@@ -261,9 +249,10 @@ Have a look at:
 ## What is this class about?
 
 - very data centric
-- I'd like to know what you are interested in
+- collecting data becomes "easier and easier"  
+- For example: I'd like to know what you are interested in
 
-## 
+## Easy collection of data
 
 - **Sports** e.g. Baseball salaries and performance
 - **Crime data** (incl. type, time, place, demographics etc.)
@@ -278,24 +267,25 @@ Climate/Weather Data
 Anything else you can think of?
 
 
-## Now vote
+## Vote
 
-Go to Wufoo Site to let me know your favorites and make suggestions:
-https://yumou.wufoo.com/forms/topics-of-interest/
+Go to Wufoo Site to collect the survey:
+https://www.wufoo.com/
 
 ## What is exploratory data analysis?
 
 Typical data science project:
 
-![typical cycle of a data science project](http://r4ds.had.co.nz/diagrams/data-science.png)
+Typical cycle of a data science project
 
+<img src="data/data-science.png" height=250>
 
 - exploration goes hand in hand with understanding
 - our understanding of the world must be based on data
 
 ## An example: mind the gap!
 
-Statistician Hans Rosling (1948 - 2017) presented [GapMinder at TED 2006](https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen)
+Statistician Hans Rosling (1948 - 2017) presented [GapMinder at TED 2006](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
 
 - preconceived notions are problematic
 - up-to-date data helps us learn about the world
