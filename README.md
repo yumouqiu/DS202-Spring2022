@@ -19,3 +19,9 @@
 01/31 [Lecture 1-6-Git](Lecture1_collaborative-environment\04_git.html)
 
 02/02 [Lecture 2-1-R basics](Lecture2-R-basics\01_r-basics.html)
+
+02/02 [Lecture 2-2-Practice for git](Practice\practice01.html)
+
+02/07 [Lecture 2-3-GGplot 1](Lecture2-R-basics\02_r-graphics.html)
+
+02/09 [Lecture 2-4-GGplot 2](Lecture2-R-basics\03_r-graphics.html)
