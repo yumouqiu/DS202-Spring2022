@@ -1,0 +1,23 @@
+---
+title: "Homework 1"
+author: "Your Name"
+date: "1/26/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Finish the part I practice (pages 3-5) in the lecture 1-2 on https://yumouqiu.github.io/DS202-Spring2022/ (Links to an external site.). Write a document in detail on how you get your plot. You may use any software for the analysis. If you attend the lecture in person, you have already finished this part.  
+The link to lecture 1-2: https://yumouqiu.github.io/DS202-Spring2022/Lecture1_collaborative-environment/01_test-case.html#tools-for-reproducibility (Links to an external site.)
+
+2. Find a classmate, and send your document to your partner.
+
+3. Replicate your partner's plot following the instructions in the document.
+
+4. Write a report on the challenges you faced (or didn’t face) or why you were or weren’t able to reproduce their work. Please write down the name of your partner.
+
+5. Turn in the report from (4). No need to turn in your plot or your partner's plot.  
+
+Note that, if you can not pair with a partner, you can ask a classmate for the document and replicate the work. But, your work will not be studied by a partner. 
