@@ -28,8 +28,14 @@
 
 02/09 [Lecture 2-4-GGplot 2](Lecture2-R-basics\03_r-graphics.html)
 
+02/09 [Lecture 2-5-Logical](Lecture2-R-basics\04_logical.html)
+
+02/14 [Lecture 2-6-Logical](Lecture2-R-basics\05_factors.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
 
 02/02 [Homework 2](Homework\homework02.html)
+
+02/09 [Homework 3](Homework\homework03.html)
