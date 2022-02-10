@@ -6,7 +6,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
+
 ```
 
 #### Due: 2/9/2022 before 11:59pm. Submit in Canvas (file upload).
@@ -24,9 +25,45 @@ Please use Github to collaborate on this problem. For example, one member can cr
 3. Write a paragraph (~200 words) describing an example of what you consider data science. Write your paragraph in R Markdown. Include at least 
     a. one link to a chart or an image and 
     b. at least one itemized or enumerated list.
+  
     
 
 Note: your submission is supposed to be fully reproducible, i.e. the TA and I will 'knit' your submission in RStudio. Including the link to the image is the tricky part here. Make sure that you don't use any file structure that depends on your computing environment.
 
 
 For the submission: submit your solution in an **R Markdown file** and (just for insurance) submit the corresponding html (or Word) file with it. 
+
+```{r import data and create subsets}
+data=read.csv("https://yumouqiu.github.io/DS202-Spring2022/Lecture1_collaborative-environment/data/gapminder-5060.csv")
+canada = dplyr::filter(data, country == "Canada")
+canada[2,4] <- 69.96
+US <- dplyr::filter(data, country =="United States")
+Aussie <- dplyr::filter(data, country =="Australia")
+```
+### Tips for working with GitHub
+1. Install Git Desktop
+2. Do some quick reading on standard GitHub documentation
+3. TRY STUFF
+
+### gdpPerCap vs. LifeExp - Canada
+```{r}
+plot(canada$gdpPercap, canada$lifeExp, type = "l", lty = 1)
+
+```
+
+### gdpPerCap vs. LifeExp - US
+```{r}
+plot(US$gdpPercap, US$lifeExp, type = "l", lty = 1)
+
+```
+
+### gdpPerCap vs. LifeExp - Australia
+```{r}
+plot(Aussie$gdpPercap, Aussie$lifeExp, type = "l", lty = 1)
+
+```
+
+## What is Data Science to me?
+
+![Data Science Pipeline](homework02_files/data_science.png)
+Today I spoke to Epic, a medical software company. They told me that they have recently gained access to de-indentified patient data from thousands of hospitals across the US. With this new data, their worked to develop a deeper understanding of how hospitals work and how they can be improved upon. This requires a lot of time and computing power, as it is a huge collection of data. This is where data science comes in. How can we actually learn from so much information? How do we confirm that the insights we develop are accurate? What kinds of tools do we need?
