@@ -65,5 +65,5 @@ plot(Aussie$gdpPercap, Aussie$lifeExp, type = "l", lty = 1)
 
 ## What is Data Science to me?
 
-![Data Science Pipeline](homework02_files/data_science.png)
+![Data Science Pipeline](data_science.png)
 Today I spoke to Epic, a medical software company. They told me that they have recently gained access to de-indentified patient data from thousands of hospitals across the US. With this new data, their worked to develop a deeper understanding of how hospitals work and how they can be improved upon. This requires a lot of time and computing power, as it is a huge collection of data. This is where data science comes in. How can we actually learn from so much information? How do we confirm that the insights we develop are accurate? What kinds of tools do we need?
