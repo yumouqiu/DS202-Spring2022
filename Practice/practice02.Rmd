@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <img src="images/choco.jpeg" class="cover" height=1500>
 
 <p class="white" style="font-size:100px" align=center>
- Lab #2<br> chocolate tasting
+ In-class practice #2<br> chocolate tasting
 </p>
 
 

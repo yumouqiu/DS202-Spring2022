@@ -32,6 +32,8 @@
 
 02/14 [Lecture 2-6-Factors](Lecture2-R-basics\05_factors.html)
 
+02/16 [Lecture 2-7-Practice for GGplot](Practice\practice02.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
