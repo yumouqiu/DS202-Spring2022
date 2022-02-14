@@ -28,7 +28,7 @@
 
 02/09 [Lecture 2-4-GGplot 2](Lecture2-R-basics\03_r-graphics.html)
 
-02/09 [Lecture 2-5-Logical](Lecture2-R-basics\04_logical.html)
+02/14 [Lecture 2-5-Logical](Lecture2-R-basics\04_logical.html)
 
 02/14 [Lecture 2-6-Factors](Lecture2-R-basics\05_factors.html)
 
