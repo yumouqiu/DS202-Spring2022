@@ -29,10 +29,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - Create a repository (one per team) & give access to everybody
 - Do a data exploration (on chocolate ratings )
 - Create an R markdown file that contains all code to read the data and create the plots
-- Submit!
-
-
-# Find your team members
 
 ## github repository
 
@@ -72,19 +68,16 @@ choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 head(choco)
 ```
 
-# A data exploration
+## A data exploration
 
-## Question set (team)
+## Question set I
 
 Answer each of the following questions using R code to get an answer. When asked for a plot, use the `ggplot2` package. 
 
 1. What is the overall  number of chocolate bars rated?
 2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
-3. Upload your RMarkdown file to the repository
 
-## Question set (individual)
-
-Download the RMarkdown file from the repository.
+## Question set II
 
 3. For each of the questions below  provide at least one graphic as a basis for your answer.
     1. How are ratings distributed? Draw a histogram of ratings and describe it. Don't forget to mention outliers, if there are any.
@@ -97,13 +90,15 @@ Download the RMarkdown file from the repository.
 Upload your answers to the repository. Discuss and refine answers as a team.
 
 
-## Your own question? (team)
+## Your own question? 
 
 1. Discuss a question you want to investigate.
 2. Answer this question by graphs.
 3. Conclusions.
 
 ## Submission
+
+This is Homework 4.
 
 In Canvas, submit an RMarkdown file with: 
 
@@ -113,8 +108,3 @@ In Canvas, submit an RMarkdown file with:
   d. the question you want to investigate with its answers and conclusions;
   e. one paragraph commenting on the workflow;
   f. a html or pdf file of the final output.
-
-
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown and html/pdf files.
-
-

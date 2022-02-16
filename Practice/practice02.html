@@ -105,21 +105,22 @@ In-class practice #2<br> chocolate tasting
 <li>Create a repository (one per team) &amp; give access to everybody</li>
 <li>Do a data exploration (on chocolate ratings )</li>
 <li>Create an R markdown file that contains all code to read the data and create the plots</li>
-<li>Submit!</li>
 </ul>
 </section>
-<section id="find-your-team-members" class="title-slide slide level1"><h1>Find your team members</h1></section><section id="github-repository" class="slide level2">
+<section id="github-repository" class="slide level2">
 <h2>github repository</h2>
 <ol type="1">
 <li>Log into github</li>
 <li>Pick one team member to create a repository called ‘lab2’</li>
 <li>Go into the settings of the repository and add your team members as collaborators</li>
 </ol>
-</section><section id="background" class="slide level2">
+</section>
+<section id="background" class="slide level2">
 <h2>Background</h2>
 <p>Brady Brelinski, Founding Member of the Manhattan Chocolate Society, obviously likes chocolate. He has assembled a database of ratings for plain dark chocolate bars: <a href="http://flavorsofcacao.com/chocolate_database.html">Flavors of chocolate</a></p>
 <p>By now, over 1800 different chocolate bars have been rated.</p>
-</section><section id="meaning-of-ratings" class="slide level2">
+</section>
+<section id="meaning-of-ratings" class="slide level2">
 <h2>Meaning of ratings</h2>
 <p>Flavors of Cacao Rating System:</p>
 <ul>
@@ -129,7 +130,8 @@ In-class practice #2<br> chocolate tasting
 <li>2= Disappointing (Passable but contains at least one significant flaw)</li>
 <li>1= Unpleasant (mostly unpalatable)</li>
 </ul>
-</section><section id="reading-the-data" class="slide level2">
+</section>
+<section id="reading-the-data" class="slide level2">
 <h2>Reading the data</h2>
 <p>The file <code>choco.csv</code> at <a href="https://ds202-at-isu.github.io/labs/data/choco.csv" class="uri">https://ds202-at-isu.github.io/labs/data/choco.csv</a> is a web scraping from the chocolate flavor data base.</p>
 <p>You can load the data into your session using the command below:</p>
@@ -150,17 +152,19 @@ In-class practice #2<br> chocolate tasting
 ## 5   3.25                      Brazil
 ## 6   3.75                     Ecuador</code></pre>
 </section>
-<section id="a-data-exploration" class="title-slide slide level1"><h1>A data exploration</h1></section><section id="question-set-team" class="slide level2">
-<h2>Question set (team)</h2>
+<section id="a-data-exploration" class="slide level2">
+<h2>A data exploration</h2>
+</section>
+<section id="question-set-i" class="slide level2">
+<h2>Question set I</h2>
 <p>Answer each of the following questions using R code to get an answer. When asked for a plot, use the <code>ggplot2</code> package.</p>
 <ol type="1">
 <li>What is the overall number of chocolate bars rated?</li>
 <li>How does the number of ratings depend on the year? Draw a bar chart of the number of reports.</li>
-<li>Upload your RMarkdown file to the repository</li>
 </ol>
-</section><section id="question-set-individual" class="slide level2">
-<h2>Question set (individual)</h2>
-<p>Download the RMarkdown file from the repository.</p>
+</section>
+<section id="question-set-ii" class="slide level2">
+<h2>Question set II</h2>
 <ol start="3" type="1">
 <li>For each of the questions below provide at least one graphic as a basis for your answer.
 <ol type="1">
@@ -171,15 +175,18 @@ In-class practice #2<br> chocolate tasting
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">top3 &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(choco, Company.Location <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;U.S.A.&quot;</span>, <span class="st">&quot;France&quot;</span>, <span class="st">&quot;Canada&quot;</span>))</a></code></pre></div></li>
 </ol>
 <p>Upload your answers to the repository. Discuss and refine answers as a team.</p>
-</section><section id="your-own-question-team" class="slide level2">
-<h2>Your own question? (team)</h2>
+</section>
+<section id="your-own-question" class="slide level2">
+<h2>Your own question?</h2>
 <ol type="1">
 <li>Discuss a question you want to investigate.</li>
 <li>Answer this question by graphs.</li>
 <li>Conclusions.</li>
 </ol>
-</section><section id="submission" class="slide level2">
+</section>
+<section id="submission" class="slide level2">
 <h2>Submission</h2>
+<p>This is Homework 4.</p>
 <p>In Canvas, submit an RMarkdown file with:</p>
 <ol type="a">
 <li>the names of all team members that worked on the document;</li>
@@ -189,7 +196,6 @@ In-class practice #2<br> chocolate tasting
 <li>one paragraph commenting on the workflow;</li>
 <li>a html or pdf file of the final output.</li>
 </ol>
-<p>Due date: You have time until Monday at 10 pm to submit the final RMmarkdown and html/pdf files.</p>
 </section>
 
   <!--
