@@ -34,6 +34,16 @@
 
 02/16 [Lecture 2-7-Practice for GGplot](Practice\practice02.html)
 
+02/21 [Lecture 2-8-Factor visualization](Lecture2-R-basics\06_vis-factor.html)
+
+02/23 [Lecture 3-1-dplyr](03_tidyverse\01_dplyr.html)
+
+02/23 [Lecture 3-2-dplyr example 1](03_tidyverse\02_dplyr-examples.html)
+
+02/28 [Lecture 3-3-dplyr example 2](03_tidyverse\03_dplyr-examples.html)
+
+02/28 [Lecture 3-4-dplyr example 3](03_tidyverse\04_dplyr-examples.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
@@ -41,3 +51,5 @@
 02/02 [Homework 2](Homework\homework02.html)
 
 02/09 [Homework 3](Homework\homework03.html)
+
+02/16 [Homework 4](https://canvas.iastate.edu/courses/90411/assignments/1681527?module_item_id=4474688.html)
