@@ -36,9 +36,11 @@
 
 02/21 [Lecture 2-8-Factor visualization](Lecture2-R-basics\06_vis-factor.html)
 
+02/23 [Lecture 2-9-Radar plot](Lecture2-R-basics\07_radar-plot.html)
+
 02/23 [Lecture 3-1-dplyr](03_tidyverse\01_dplyr.html)
 
-02/23 [Lecture 3-2-dplyr example 1](03_tidyverse\02_dplyr-examples.html)
+02/28 [Lecture 3-2-dplyr example 1](03_tidyverse\02_dplyr-examples.html)
 
 02/28 [Lecture 3-3-dplyr example 2](03_tidyverse\03_dplyr-examples.html)
 
