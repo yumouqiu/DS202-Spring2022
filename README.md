@@ -18,7 +18,7 @@
 
 01/31 [Lecture 1-6-Git](Lecture1_collaborative-environment\04_git.html)
 
-### February
+### February 
 
 02/02 [Lecture 2-1-R basics](Lecture2-R-basics\01_r-basics.html)
 
