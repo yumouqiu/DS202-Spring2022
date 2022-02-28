@@ -199,7 +199,34 @@
 <li><span style="color:white">Choose <code>California</code> and <code>New York</code></span></li>
 <li><span style="color:white">Choose Year <code>1971</code> and <code>2016</code></span></li>
 <li><span style="color:white">Make a radar plot to compare <code>State</code>, <code>Year</code> and <code>Type</code> by the crime rate</span></li>
+<li><span style="color:white">Remove <code>Rape</code> and <code>Legacy.rape</code> for this plot</span></li>
 </ul>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(classdata)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">crime.compare =<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(fbi, Year <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1971</span>, <span class="dv">2016</span>), State <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;California&quot;</span>, <span class="st">&quot;New York&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">Abb =</span> <span class="kw">as.factor</span>(Abb))</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">levels</span>(crime.compare<span class="op">$</span>Type)[<span class="dv">1</span>] =<span class="st"> &quot;Assault&quot;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw">levels</span>(crime.compare<span class="op">$</span>Type)[<span class="dv">5</span>] =<span class="st"> &quot;MV.theft&quot;</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="kw">levels</span>(crime.compare<span class="op">$</span>Type)[<span class="dv">6</span>] =<span class="st"> &quot;Murder&quot;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">crime.compare <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(Type <span class="op">!=</span><span class="st"> &quot;Legacy.rape&quot;</span>, Type <span class="op">!=</span><span class="st"> &quot;Rape&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Type, <span class="dt">y =</span> <span class="kw">log</span>(Count <span class="op">/</span><span class="st"> </span>Population <span class="op">*</span><span class="st"> </span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">group =</span> Abb, <span class="dt">color =</span> Abb), <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">group =</span> Abb, <span class="dt">color =</span> Abb), <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Year) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(<span class="fl">0.8</span>)),</a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">        <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(<span class="fl">0.8</span>)),</a>
+<a class="sourceLine" id="cb8-15" data-line-number="15">        <span class="dt">axis.ticks.y =</span> <span class="kw">element_blank</span>(),</a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">        <span class="dt">axis.text.y =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-18" data-line-number="18"><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="kw">guide_legend</span>(<span class="dt">ncol=</span><span class="dv">2</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"><span class="st">  </span><span class="kw">coord_radar</span>()</a></code></pre></div>
+</section>
+<section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<p><img src="07_radar-plot_files/figure-revealjs/unnamed-chunk-8-1.png" width="768" /></p>
 </section>
 
   <!--
