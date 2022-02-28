@@ -2,7 +2,7 @@
 
 ## Lectures
 
-### January
+### January 
 
 01/19 [Lecture 0](Lecture0-Getting Started\Lecture0.html)
 
