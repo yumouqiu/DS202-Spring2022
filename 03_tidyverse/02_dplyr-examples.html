@@ -170,36 +170,41 @@
 <section id="recoding-missing-values" class="slide level2">
 <h2>Recoding missing values</h2>
 <p>Object in <code>replace</code> does not have to be a variable, a data frame can also be used:</p>
+<p>Be careful to use <code>%in%</code>. It may not work in data frame.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span><span class="kw">replace</span>(HAPPY, HAPPY <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;IAP&quot;</span>, <span class="st">&quot;DK&quot;</span>, <span class="st">&quot;NA&quot;</span>), <span class="ot">NA</span>)</a></code></pre></div>
+<p>Instead</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span><span class="kw">replace</span>(HAPPY, HAPPY <span class="op">==</span><span class="st"> &quot;IAP&quot;</span>, <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">HAPPY &lt;-<span class="st"> </span><span class="kw">replace</span>(HAPPY, HAPPY <span class="op">==</span><span class="st"> &quot;DK&quot;</span>, <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">HAPPY &lt;-<span class="st"> </span><span class="kw">replace</span>(HAPPY, HAPPY <span class="op">==</span><span class="st"> &quot;NA&quot;</span>, <span class="ot">NA</span>)</a></code></pre></div>
 <p>the remaining cleaning is just pretty tedious manual work …</p>
 </section>
 <section id="the-variable-age" class="slide level2">
 <h2>The variable <code>AGE</code></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span>HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">age =</span> <span class="kw">replace</span>(AGE, AGE <span class="op">==</span><span class="st"> &quot;89 AND OLDER&quot;</span>, <span class="dv">89</span>),</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">age =</span> <span class="kw">as.numeric</span>(age)</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>AGE)</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">1</span>)</a></code></pre></div>
-<p><img src="02_dplyr-examples_files/figure-revealjs/unnamed-chunk-6-1.png" width="480" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span>HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="dt">age =</span> <span class="kw">replace</span>(AGE, AGE <span class="op">==</span><span class="st"> &quot;89 AND OLDER&quot;</span>, <span class="dv">89</span>),</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="dt">age =</span> <span class="kw">as.numeric</span>(age)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>AGE)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> age)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="02_dplyr-examples_files/figure-revealjs/unnamed-chunk-7-1.png" width="480" /></p>
 </section>
 <section id="the-variable-degree" class="slide level2">
 <h2>The variable <code>DEGREE</code></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span>HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="dt">degree =</span> <span class="kw">factor</span>(<span class="kw">tolower</span>(DEGREE)),</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="dt">degree =</span> <span class="kw">factor</span>(degree, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;lt high school&quot;</span>, <span class="st">&quot;high school&quot;</span>, <span class="st">&quot;junior college&quot;</span>, <span class="st">&quot;bachelor&quot;</span>, <span class="st">&quot;graduate school&quot;</span>))</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>DEGREE)</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> degree)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="02_dplyr-examples_files/figure-revealjs/unnamed-chunk-7-1.png" width="480" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">HAPPY &lt;-<span class="st"> </span>HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="dt">degree =</span> <span class="kw">factor</span>(<span class="kw">tolower</span>(DEGREE)),</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">  <span class="dt">degree =</span> <span class="kw">factor</span>(degree, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;lt high school&quot;</span>, <span class="st">&quot;high school&quot;</span>, <span class="st">&quot;junior college&quot;</span>, <span class="st">&quot;bachelor&quot;</span>, <span class="st">&quot;graduate school&quot;</span>))</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>DEGREE)</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">HAPPY <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> degree)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
+<p><img src="02_dplyr-examples_files/figure-revealjs/unnamed-chunk-8-1.png" width="480" /></p>
 </section>
 <section id="working-with-happy" class="slide level2">
 <h2>Working with <code>happy</code></h2>
 <p><code>happy</code> data included in the <code>classdata</code> package</p>
 <!--- upgrade the package: `devtools::install_github("heike/classdata")` --->
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">library</span>(classdata)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;happy&quot;</span>, <span class="dt">package=</span><span class="st">&quot;classdata&quot;</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">head</span>(happy)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">library</span>(classdata)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;happy&quot;</span>, <span class="dt">package=</span><span class="st">&quot;classdata&quot;</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">head</span>(happy)</a></code></pre></div>
 <pre><code>##           happy year age    sex       marital         degree       finrela
 ## 1 not too happy 1972  23 female never married       bachelor       average
 ## 2 not too happy 1972  70   male     separated lt high school above average
@@ -218,14 +223,14 @@
 <section id="summarising-happiness" class="slide level2">
 <h2>Summarising Happiness</h2>
 <p>Use scores for <code>happy</code> factor to summarise overall happiness level, i.e. <code>not too happy</code> = 1, <code>pretty happy</code> = 2, and <code>very happy</code> = 3</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="dt">m.happy =</span> <span class="kw">mean</span>(<span class="kw">as.numeric</span>(happy), <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">  )</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">  <span class="dt">m.happy =</span> <span class="kw">mean</span>(<span class="kw">as.numeric</span>(happy), <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">  )</a></code></pre></div>
 <pre><code>##    m.happy
 ## 1 2.186969</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">  <span class="dt">m.happy =</span> <span class="kw">mean</span>(<span class="kw">as.numeric</span>(happy), <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">  )</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">  <span class="dt">m.happy =</span> <span class="kw">mean</span>(<span class="kw">as.numeric</span>(happy), <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">  )</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   sex    m.happy
 ##   &lt;fct&gt;    &lt;dbl&gt;
@@ -249,7 +254,6 @@
 <p><span style="color:white">For this your turn use the <code>happy</code> data from the <code>classdata</code> package </span></p>
 <ul>
 <li><span style="color:white">Investigate what other variable(s) might be associated with happiness. Plot it.</span></li>
-<li><span style="color:white">Submit your code in Canvas for one point of extra credit.</span></li>
 </ul>
 </section>
 <section id="helper-functions-1" class="slide level2">
@@ -257,7 +261,7 @@
 <ul>
 <li><code>n()</code> provides the number of rows of a subset:</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>())</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   sex        n
 ##   &lt;fct&gt;  &lt;int&gt;
@@ -266,7 +270,7 @@
 <ul>
 <li><code>tally()</code> is a combination of <code>summarise</code> and <code>n</code></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tally</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tally</span>()</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   sex        n
 ##   &lt;fct&gt;  &lt;int&gt;
@@ -278,7 +282,7 @@
 <ul>
 <li><code>count()</code> is a further shortcut of <code>group_by</code> and <code>tally</code>:</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(sex, degree)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">happy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(sex, degree)</a></code></pre></div>
 <pre><code>## Warning: Factor `degree` contains implicit NA, consider using
 ## `forcats::fct_explicit_na`</code></pre>
 <pre><code>## # A tibble: 12 x 3
