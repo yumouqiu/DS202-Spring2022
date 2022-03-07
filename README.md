@@ -42,11 +42,13 @@
 
 02/28 [Lecture 3-2-dplyr example 1](03_tidyverse\03_dplyr-examples.html)
 
-02/28 [Lecture 3-3-dplyr example 2](03_tidyverse\04_dplyr-examples.html)
+03/02 [Lecture 3-3-dplyr example 2](03_tidyverse\04_dplyr-examples.html)
 
-02/28 [Lecture 3-4-Practice for dplyr](Practice\practice03.html)
+03/02 [Lecture 3-4-Practice for dplyr](Practice\practice03.html)
 
-03/02 [Lecture 3-5-dplyr example 3](03_tidyverse\02_dplyr-examples.html)
+03/07 [Lecture 3-5-dplyr example 3](03_tidyverse\02_dplyr-examples.html)
+
+03/07 [Lecture 3-6-tidyr](03_tidyverse\05_tidyr.html)
 
 ## Homeworks
 
