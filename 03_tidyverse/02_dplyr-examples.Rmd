@@ -67,9 +67,17 @@ head(HAPPY)
 
 Object in `replace` does not have to be a variable, a data frame can also be used:
 
+Be careful to use `%in%`. It may not work in data frame.
 ```{r}
 HAPPY <- replace(HAPPY, HAPPY %in% c("IAP", "DK", "NA"), NA)
 ```
+Instead
+```{r}
+HAPPY <- replace(HAPPY, HAPPY == "IAP", NA)
+HAPPY <- replace(HAPPY, HAPPY == "DK", NA)
+HAPPY <- replace(HAPPY, HAPPY == "NA", NA)
+```
+
 
 the remaining cleaning is just pretty tedious manual work ...
 
@@ -155,7 +163,7 @@ happy.fin.sex %>% ggplot(aes(x = finrela, fill = sex)) + geom_bar(aes(weight = m
 <span style="color:white">For this your turn use the `happy` data from the `classdata` package </span>
 
 - <span style="color:white">Investigate what other variable(s) might be associated with happiness. Plot it.</span>
-- <span style="color:white">Submit your code in Canvas for one point of extra credit.</span>
+
 
 ```{r, eval = FALSE, echo = FALSE}
 happy.martial.sex = happy %>% group_by(marital, sex) %>% summarise(m.happy = mean(as.numeric(happy), na.rm = TRUE)) %>% arrange(m.happy)
