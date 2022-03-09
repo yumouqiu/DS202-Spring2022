@@ -69,3 +69,6 @@
 03/02 [Homework 6](https://canvas.iastate.edu/courses/90411/assignments/1687038)
 
 03/09 [Homework 7](Homework\homework07.html)
+
+## [Sample Exam](Exam\exam-sample.html)
+
