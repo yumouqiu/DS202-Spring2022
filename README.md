@@ -50,6 +50,10 @@
 
 03/07 [Lecture 3-6-tidyr](03_tidyverse\05_tidyr.html)
 
+03/09 [Lecture 3-7-messy II](03_tidyverse\06_tidyr.html)
+
+03/09 [Lecture 3-8-messy III](03_tidyverse\07_messy-3.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
@@ -63,3 +67,5 @@
 02/23 [Homework 5](Homework\homework05.html)
 
 03/02 [Homework 6](https://canvas.iastate.edu/courses/90411/assignments/1687038)
+
+03/09 [Homework 7](Homework\homework07.html)
