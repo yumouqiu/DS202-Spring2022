@@ -52,7 +52,7 @@
 
 03/09 [Lecture 3-7-messy II](03_tidyverse\06_tidyr.html)
 
-03/09 [Lecture 3-8-messy III](03_tidyverse\07_messy-3.html)
+03/21 [Lecture 3-8-messy III](03_tidyverse\07-messy-3.html.html)
 
 ## Homeworks
 
