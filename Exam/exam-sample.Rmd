@@ -17,9 +17,9 @@ Here, we are using play-by-play data on all NBA games on two days in Oct 2017.
 
 ## Question #1: First Overview
 
-Read the data [`sample-combined-pbp-stats.csv`](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Exam/sample-combined-pbp-stats.csv) from our course Github website by using the code
+Read the data [`sample-combined-pbp-stats.csv`](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Exam/sample-combined-pbp-stats.csv) from our course Github website. Please save the data as a csv file local on your computer and read in R by the code:
 ```{r, message = FALSE, warning = FALSE}
-A = read.csv("https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Exam/sample-combined-pbp-stats.csv")
+pbp = read.csv("sample-combined-pbp-stats.csv")
 ```
 Each line of the file describes one play in a game. 
 
