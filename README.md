@@ -54,7 +54,9 @@
 
 03/21 [Lecture 3-8-messy III](03_tidyverse\07-messy-3.html)
 
-03/21 [Lecture 3-9-messy IV](03_tidyverse\08-messy-4.html)
+03/28 [Lecture 3-9-messy IV](03_tidyverse\08-messy-4.html)
+
+03/28 [Lecture 3-10-missing values](03_tidyverse\09_missing-values.html)
 
 ## Homeworks
 
