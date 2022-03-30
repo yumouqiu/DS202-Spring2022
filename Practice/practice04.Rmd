@@ -18,11 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg" class="cover" height=1500>
 <br>
 <br>
-<br>
-<br>
-<br>
 <p class="white" style="font-size:90px" align=center>
- Lab #4<br> Avengers' Perils
+ Practice #4<br> Avengers' Perils
 </p>
 
 
@@ -34,15 +31,12 @@ knitr::opts_chunk$set(echo = TRUE)
 - Tidying data (on Avengers' risks)
 - Fact checking some FiveThirtyEight statements
 - Create an R markdown file that contains all code to read the data and create the plots
-- Submit!
 
-
-# Find your team members
 
 ## github repository
 
 1. Log into github 
-2. Pick one team member to create a repository called 'lab4'. Make sure to initialize the repo with a README file. 
+2. Pick one team member to create a repository called 'practice4'. Make sure to initialize the repo with a README file. 
 3. Go into the settings of the repository and add your team members as collaborators
 
 ## Cloning the repo
@@ -84,7 +78,7 @@ Each team member picks one of the statements in the FiveThirtyEight [analysis](h
 
 Upload your answers and the code to the repository. Discuss and refine answers as a team.
 
-## Submission
+## Submission for Homework 9 (next week homework)
 
 In Canvas, submit an RMarkdown file (and the knitted html document) with: 
 
@@ -92,8 +86,4 @@ In Canvas, submit an RMarkdown file (and the knitted html document) with:
   b. a link to the github repo you were working in.
   c. code and answers to all of the questions.
   d. you can upload the data file, but you don't have to
-
-
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
-
 

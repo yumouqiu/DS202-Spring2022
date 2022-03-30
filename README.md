@@ -44,7 +44,7 @@
 
 03/02 [Lecture 3-3-dplyr example 2](03_tidyverse\04_dplyr-examples.html)
 
-03/02 [Lecture 3-4-Practice for dplyr](Practice\practice03.html)
+03/02 [Lecture 3-4-Practice for dplyr I](Practice\practice03.html)
 
 03/07 [Lecture 3-5-dplyr example 3](03_tidyverse\02_dplyr-examples.html)
 
@@ -56,7 +56,11 @@
 
 03/28 [Lecture 3-9-messy IV](03_tidyverse\08-messy-4.html)
 
-03/28 [Lecture 3-10-missing values](03_tidyverse\09_missing-values.html)
+03/30 [Lecture 3-10-missing values](03_tidyverse\09_missing-values.html)
+
+03/30 [Lecture 3-11-Practice for dplyr II](Practice\practice04.html)
+
+04/04 [Lecture 4-1-time](04_date-time-space\01_date-and-time.html)
 
 ## Homeworks
 
@@ -73,6 +77,8 @@
 03/02 [Homework 6](https://canvas.iastate.edu/courses/90411/assignments/1687038)
 
 03/09 [Homework 7](Homework\homework07.html)
+
+03/28 [Homework 8](https://canvas.iastate.edu/courses/90411/assignments/1694569?module_item_id=4519751)
 
 ## [Sample Exam](Exam\exam-sample.html)
 
