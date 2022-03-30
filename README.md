@@ -42,6 +42,8 @@
 
 02/28 [Lecture 3-2-dplyr example 1](03_tidyverse\03_dplyr-examples.html)
 
+### March
+
 03/02 [Lecture 3-3-dplyr example 2](03_tidyverse\04_dplyr-examples.html)
 
 03/02 [Lecture 3-4-Practice for dplyr I](Practice\practice03.html)
@@ -59,6 +61,8 @@
 03/30 [Lecture 3-10-missing values](03_tidyverse\09_missing-values.html)
 
 03/30 [Lecture 3-11-Practice for dplyr II](Practice\practice04.html)
+
+### April
 
 04/04 [Lecture 4-1-time](04_date-time-space\01_date-and-time.html)
 
