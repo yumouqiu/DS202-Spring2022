@@ -72,6 +72,31 @@ Get the data into a format where the five columns for Death[1-5] are replaced by
 
 Similarly, deal with the returns of characters.
 
+```{r, eval=FALSE, echo=FALSE}
+library(tidyverse)
+av = read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
+names(av)
+
+av0 = av %>% filter(Name.Alias != "")
+av1 = av0 %>% gather(key = time, value = death, c(11, 13, 15, 17, 19)) %>% 
+  select(Name.Alias, time, death) %>%
+  mutate(time = parse_number(time))
+av2 = av0 %>% gather(key = time, value = return, c(12, 14, 16, 18, 20)) %>% 
+  select(Name.Alias, time, return) %>%
+  mutate(time = parse_number(time))
+av.neat = left_join(av1, av2, by = c("Name.Alias", "time"))
+
+av0 = av0 %>% filter(Name.Alias != "Vance Astrovik")
+av1 = av0 %>% gather(key = time, value = death, c(11, 13, 15, 17, 19)) %>% 
+  select(Name.Alias, time, death) %>%
+  mutate(time = parse_number(time))
+av2 = av0 %>% gather(key = time, value = return, c(12, 14, 16, 18, 20)) %>% 
+  select(Name.Alias, time, return) %>%
+  mutate(time = parse_number(time))
+av.neat = left_join(av1, av2, by = c("Name.Alias", "time"))
+```
+
+
 ## Part two: Validation
 
 Each team member picks one of the statements in the FiveThirtyEight [analysis](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/) and fact checks it based on the data. Use dplyr functionality whenever possible.
