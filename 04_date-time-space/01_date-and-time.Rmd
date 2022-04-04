@@ -15,7 +15,7 @@ library(tidyverse)
 library(lubridate)
 ```
 
-# Working with date and time
+## Working with date and time
 
 
 ## `lubridate` package
@@ -119,7 +119,7 @@ box %>% ggplot(aes(x = month(Date, label=TRUE))) + geom_bar()
 - <span style="color:white">is the time between the release of a movie and the date is equal to the number of weeks in theaters?
 </span>
 
-```{r}
+```{r, echo=F, eval=FALSE}
 str(budget)
 summary(budget$`Release Date`)
 budget %>% ggplot(aes(x = `Release Date`)) + geom_histogram()
