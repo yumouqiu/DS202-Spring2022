@@ -66,6 +66,8 @@
 
 04/04 [Lecture 4-1-time](04_date-time-space\01_date-and-time.html)
 
+04/04 [Lecture 4-2-time series](04_date-time-space\02_time-series.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
