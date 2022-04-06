@@ -91,3 +91,7 @@
 ## [Sample Exam](Exam\exam-sample.html)
 
 [Solution](Exam\exam-sample-solution.html)
+
+## [Exam](Exam\Exam-2022.html)
+
+[Solution](Exam\Exam-2022-Solution.html)
