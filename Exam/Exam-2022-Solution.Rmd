@@ -74,7 +74,7 @@ A3 %>% ggplot(aes(x = City1)) + geom_bar(aes(weight = number))
 
 ### Question #3 (15 points)
 
-- Uuse the following code to extract the lattitude and longtitude from the variable `Store.Address`. 
+- Use the following code to extract the lattitude and longtitude from the variable `Store.Address`. 
 ```{r}
 A = A %>% separate(Store.Address, into = c("Address", "Location"), sep = "\n\\(")
 A = A %>% separate(Location, into = c("Latitude", "Longitude"), sep = ",") %>% select(-Address)
