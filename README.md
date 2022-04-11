@@ -66,9 +66,11 @@
 
 04/04 [Lecture 4-1-time](04_date-time-space\01_date-and-time.html)
 
-04/04 [Lecture 4-2-time series](04_date-time-space\02_time-series.html)
+04/06 [Lecture 4-2-time series](04_date-time-space\02_time-series.html)
 
-04/06 [Lecture 4-3-layers](04_date-time-space\03_layers.html)
+04/11 [Lecture 4-3-layers](04_date-time-space\03_layers.html)
+
+04/13 [Lecture 4-4-maps](04_date-time-space\04_maps.html)
 
 ## Homeworks
 
@@ -87,6 +89,8 @@
 03/09 [Homework 7](Homework\homework07.html)
 
 03/28 [Homework 8](https://canvas.iastate.edu/courses/90411/assignments/1694569?module_item_id=4519751)
+
+04/07 [Homework 9](https://canvas.iastate.edu/courses/90411/assignments/1698064?module_item_id=4535011)
 
 ## [Sample Exam](Exam\exam-sample.html)
 
