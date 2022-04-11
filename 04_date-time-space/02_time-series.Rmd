@@ -80,7 +80,7 @@ nasa %>% filter(x == 1, y == 1) %>%
   ggplot(aes(x = month(date, label = TRUE), y = ozone, group = year(date), color = year(date))) + geom_line()
 
 nasa %>% filter(x %in% c(1 : 10), y %in% c(7 : 10)) %>%
-  ggplot(aes(x = time, y = temperature, group = id, color = id)) + geom_line()
+  ggplot(aes(x = time, y = ozone, group = id, color = id)) + geom_line()
 ```
 
 ## Box office gross

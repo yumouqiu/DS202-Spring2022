@@ -97,6 +97,20 @@ av.neat = left_join(av1, av2, by = c("Name.Alias", "time"))
 ```
 
 
+```{r}
+av.neat %>% group_by(time) %>% summarise(total.num = n(),
+                                         real.death = sum(death == "YES"), 
+                                         fake.death = sum(death == "NO"), 
+                                         missing = sum(death == ""))
+
+av.neat %>% filter(time == 1, death == "YES") %>% 
+  summarise(total.num = n(),
+            real.return = sum(return == "YES"), 
+            fake.return = sum(return == "NO"), 
+            missing = sum(return == ""))
+```
+
+
 ## Part two: Validation
 
 Each team member picks one of the statements in the FiveThirtyEight [analysis](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/) and fact checks it based on the data. Use dplyr functionality whenever possible.
