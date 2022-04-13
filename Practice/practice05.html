@@ -55,6 +55,17 @@
 <li>Load the accident data, plot latitude and longitude on a map.</li>
 <li>Variable names of the <code>accident.csv</code>:</li>
 </ul>
+<pre><code>##  [1] &quot;STATE&quot;      &quot;ST_CASE&quot;    &quot;VE_TOTAL&quot;   &quot;VE_FORMS&quot;   &quot;PVH_INVL&quot;  
+##  [6] &quot;PEDS&quot;       &quot;PERNOTMVIT&quot; &quot;PERMVIT&quot;    &quot;PERSONS&quot;    &quot;COUNTY&quot;    
+## [11] &quot;CITY&quot;       &quot;DAY&quot;        &quot;MONTH&quot;      &quot;YEAR&quot;       &quot;DAY_WEEK&quot;  
+## [16] &quot;HOUR&quot;       &quot;MINUTE&quot;     &quot;NHS&quot;        &quot;RUR_URB&quot;    &quot;FUNC_SYS&quot;  
+## [21] &quot;RD_OWNER&quot;   &quot;ROUTE&quot;      &quot;TWAY_ID&quot;    &quot;TWAY_ID2&quot;   &quot;MILEPT&quot;    
+## [26] &quot;LATITUDE&quot;   &quot;LONGITUD&quot;   &quot;SP_JUR&quot;     &quot;HARM_EV&quot;    &quot;MAN_COLL&quot;  
+## [31] &quot;RELJCT1&quot;    &quot;RELJCT2&quot;    &quot;TYP_INT&quot;    &quot;WRK_ZONE&quot;   &quot;REL_ROAD&quot;  
+## [36] &quot;LGT_COND&quot;   &quot;WEATHER1&quot;   &quot;WEATHER2&quot;   &quot;WEATHER&quot;    &quot;SCH_BUS&quot;   
+## [41] &quot;RAIL&quot;       &quot;NOT_HOUR&quot;   &quot;NOT_MIN&quot;    &quot;ARR_HOUR&quot;   &quot;ARR_MIN&quot;   
+## [46] &quot;HOSP_HR&quot;    &quot;HOSP_MN&quot;    &quot;CF1&quot;        &quot;CF2&quot;        &quot;CF3&quot;       
+## [51] &quot;FATALS&quot;     &quot;DRUNK_DR&quot;</code></pre>
 </section>
 <section id="part-one-accident-data" class="slide level2">
 <h2>Part one: Accident data</h2>
@@ -67,7 +78,7 @@
 <section id="part-two-connecting-data" class="slide level2">
 <h2>Part two: Connecting data</h2>
 <ul>
-<li>Connect to the <a href="https://raw.githubusercontent.com/DS202-at-ISU/labs/master/data/fars2016/person.csv">person table</a>. Identify drivers (PER_TYP == 1, see fars manual ) and subset on them.</li>
+<li>Connect to the <a href="https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Practice/data/fars2016/person.csv">person table</a>. Identify drivers (PER_TYP == 1, see fars manual ) and subset on them.</li>
 <li>Join accident and driver table (work out which variable(s) to use)</li>
 <li>Tally the number of accidents by day of the week (DAY_WEEK), hour of the day (HOUR) and gender (SEX). Visualize the results!</li>
 </ul>
@@ -79,9 +90,7 @@
 <li>the names of all team members that worked on the document.</li>
 <li>a link to the github repo you were working in.</li>
 <li>code and answers to all of the questions.</li>
-<li>you can upload the data file, but you don’t have to</li>
 </ol>
-<p>Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.</p>
 </section>
 
   <!--

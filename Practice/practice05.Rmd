@@ -62,9 +62,4 @@ In Canvas, submit an RMarkdown file (and the knitted html document) with:
   a. the names of all team members that worked on the document.
   b. a link to the github repo you were working in.
   c. code and answers to all of the questions.
-  d. you can upload the data file, but you don't have to
-
-
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
-
 
