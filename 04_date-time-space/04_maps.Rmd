@@ -128,7 +128,12 @@ counties %>% ggplot(aes(x = long, y = lat)) + geom_polygon(aes(group = group))
 counties$Story = (counties$subregion == "story") 
 counties %>% ggplot(aes(x = long, y = lat, fill = Story)) + geom_polygon(aes(group = group))
 
-counties %>% group_by(region, subregion) %>% count() %>% group_by(subregion) %>% count() %>% arrange(desc(nn))
+counties %>% group_by(subregion) %>% summarise(n = length(unique(group))) %>% arrange(desc(n))
+
+# "washington" is the most common name for counties
+
+counties = counties %>% mutate(washington = (subregion == "washington"))
+counties %>% ggplot(aes(x = long, y = lat)) + geom_polygon(aes(group = group, fill = washington))
 ```
 
 ## Choropleth maps
@@ -195,8 +200,8 @@ fbi12$region <- tolower(fbi12$State)
 
 fbi.map12 <- fbi12 %>% left_join(states, by="region")
 fbi.map12 %>% filter(Type=="Motor.vehicle.theft") %>% 
-  ggplot(aes(x = long, y = lat, fill=Count/Population*70000)) +
-  geom_polygon(aes(group=group)) + 
+  ggplot(aes(x = long, y = lat)) +
+  geom_polygon(aes(group=group, fill=Count/Population*70000)) + 
   scale_fill_gradient2()
 ```
 
