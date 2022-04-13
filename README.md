@@ -72,6 +72,8 @@
 
 04/13 [Lecture 4-4-maps](04_date-time-space\04_maps.html)
 
+04/13 [Lecture 4-Practice for time series data](Practice\practice05.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)

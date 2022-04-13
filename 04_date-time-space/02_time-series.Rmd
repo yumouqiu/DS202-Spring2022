@@ -117,9 +117,14 @@ box_summary <- box %>% group_by(Movie, Distributor) %>%
   summarize(
     Date = max(Date),
     Week = max(Week),
-    Total.Gross = max(Total.Gross, na.rm=TRUE),
+    Max.Thtrs = max(Thtrs.),
+    Final.Gross = max(Total.Gross, na.rm=TRUE),
     First.Gross = min(Total.Gross, na.rm=TRUE)
   )
+
+box_summary.clean1 = box_summary %>% filter(Week < 50)
+box_summary.clean1 = box_summary.clean1 %>% arrange(desc(Final.Gross)) 
+
 
 box1 = box_summary %>% filter(year(Date) < 2018)
 box2 = box_summary %>% filter(year(Date) >= 2018)

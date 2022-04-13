@@ -13,17 +13,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Lab #5: Accident data
+## Practice #5: Accident data
 
 
 ## Outline
 
 - Find your team members
 - Create an R markdown file that contains all code to read the data and create the plots
-- Submit!
-
-
-# Find your team members
+- Homework 10 submit!
 
 
 ## FARS data
@@ -32,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - FARS consists of 20+ tables consisting of various aspects of each accident
 Documentation at
 - https://www-fars.nhtsa.dot.gov/Main/index.aspx
-- three of the main tables are `accident`, `person`, and `vehicle`, stored in the data foler of our CANVAS page
+- three of the main tables are [accident](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Practice/data/fars2016/accident.csv), [person](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Practice/data/fars2016/person.csv), and [vehicle](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Practice/data/fars2016/vehicle.csv), stored in the [data foler](https://github.com/yumouqiu/DS202-Spring2022/tree/main/Practice/data/fars2016) of our Github page.
 
 ## Data Background (2)
 
@@ -41,7 +38,7 @@ Documentation at
 - Variable names of the `accident.csv`:
 
 ```{r, echo = FALSE}
-acc <- read.csv("https://raw.githubusercontent.com/DS202-at-ISU/labs/master/data/fars2016/accident.csv", stringsAsFactors = FALSE)
+acc <- read.csv("data/fars2016/accident.csv", stringsAsFactors = FALSE)
 names(acc)
 ```
 
@@ -53,7 +50,7 @@ names(acc)
 
 ## Part two: Connecting data
 
-- Connect to the [person table](https://raw.githubusercontent.com/DS202-at-ISU/labs/master/data/fars2016/person.csv). Identify drivers (PER_TYP == 1, see fars manual ) and subset on them.
+- Connect to the [person table](https://raw.githubusercontent.com/yumouqiu/DS202-Spring2022/main/Practice/data/fars2016/person.csv). Identify drivers (PER_TYP == 1, see fars manual ) and subset on them.
 - Join accident and driver table (work out which variable(s) to use)
 - Tally the number of accidents by day of the week (DAY_WEEK), hour of the day (HOUR) and gender (SEX). Visualize the results!
 
