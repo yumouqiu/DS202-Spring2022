@@ -74,6 +74,8 @@
 
 04/13 [Lecture 4-Practice for time series data](Practice\practice05.html)
 
+04/18 [Lecture 5-1-polishing](05_plot-elements\01_polishing-plots.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
@@ -93,6 +95,8 @@
 03/28 [Homework 8](https://canvas.iastate.edu/courses/90411/assignments/1694569?module_item_id=4519751)
 
 04/07 [Homework 9](https://canvas.iastate.edu/courses/90411/assignments/1698064?module_item_id=4535011)
+
+04/14 [Homework 10](https://canvas.iastate.edu/courses/90411/assignments/1700590?module_item_id=4544327)
 
 ## [Sample Exam](Exam\exam-sample.html)
 
