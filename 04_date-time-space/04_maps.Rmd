@@ -230,7 +230,8 @@ Documentation at
 - Data of all accidents are available at:
 
 ```{r}
-acc <- read.csv("https://raw.githubusercontent.com/DS202-at-ISU/labs/master/data/fars2016/accident.csv", stringsAsFactors = FALSE)
+getwd()
+acc <- read.csv("/Users/yumouqiu/DS202-Spring2022/Practice/data/fars2016/accident.csv", stringsAsFactors = FALSE)
 names(acc)
 ```
 
@@ -268,7 +269,7 @@ states %>% ggplot(aes(x = long, y = lat)) +
 </span>
 
 ```{r}
-# 1. Relate the flip code to state name. Copy and paste the flip name with state name to an excel file, save it as .csv file and read into R;
+# 1. Relate the fips code to state name. Copy and paste the fips name with state name to an excel file, save it as .csv file and read into R;
 # 2. Combine acc with StateNames by the filp code;
 # 3. Summarize the fatal rate by states
 # 4. Join the content data (acc2) with the map data (states)
@@ -279,3 +280,45 @@ acc1 = acc %>% left_join(StateNames, by = c("STATE" = "V2"))
 acc2 = acc1 %>% group_by(V1) %>% summarise(total.acc = n(), total.fatal = sum(FATALS))
 ```
 
+```{r}
+# Solutions
+
+library(tidyverse)
+library(maps)
+
+states <- map_data("state")
+acc <- read.csv("/Users/yumouqiu/DS202-Spring2022/Practice/data/fars2016/accident.csv", stringsAsFactors = FALSE)
+
+acc2016 = acc %>% filter(YEAR == 2016) %>% 
+  filter(abs(LONGITUD) < 300, abs(LATITUDE) < 300)
+acc2016 %>% ggplot(aes(x = LONGITUD, y = LATITUDE)) + 
+  geom_point()
+
+acc2016.mainland = acc %>% filter(YEAR == 2016) %>% 
+  filter(abs(LONGITUD) < 130, LATITUDE < 50)
+acc2016.mainland %>% ggplot(aes(x = LONGITUD, y = LATITUDE)) + 
+  geom_point()
+
+acc2016.mainland1 = acc2016.mainland %>% 
+  mutate(drunk = (DRUNK_DR > 0))
+states %>% ggplot(aes(x = long, y = lat)) + 
+  geom_path(aes(group = group)) + 
+  geom_point(data = acc2016.mainland1 %>% filter(FATALS >= 3), 
+             aes(x = LONGITUD, y = LATITUDE, col = drunk), size = 0.5)
+
+state.code = read.csv("/Users/yumouqiu/DS202-Spring2022/04_date-time-space/StateNames.csv")
+names(state.code)[1] = "region"
+state.code$region = tolower(state.code$region)
+
+acc2016.mainland2 = left_join(acc2016.mainland1, state.code, 
+                              by = c("STATE" = "code"))
+
+acc2016.state = acc2016.mainland2 %>% group_by(region) %>%
+  summarise(n = n()) %>% ungroup()
+
+states.acc = left_join(states, acc2016.state, by = "region")
+states.acc %>% ggplot(aes(x = long, y = lat)) + 
+  geom_polygon(aes(group = group, fill = n)) + 
+  scale_fill_gradient(low = "#BF1E14", high = "#46302E")
+
+```
