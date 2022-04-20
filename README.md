@@ -72,9 +72,13 @@
 
 04/13 [Lecture 4-4-maps](04_date-time-space\04_maps.html)
 
-04/13 [Lecture 4-Practice for time series data](Practice\practice05.html)
+04/18 [Lecture 4-5-Practice for time series data](Practice\practice05.html)
 
-04/18 [Lecture 5-1-polishing](05_plot-elements\01_polishing-plots.html)
+04/20 [Lecture 5-1-polishing](05_plot-elements\01_polishing-plots.html)
+
+04/25 [Lecture 6-1-web scraping I](06_web-scraping\01_rvest.html)
+
+04/27 [Lecture 6-2-web scraping II](06_web-scraping\02_purrr.html)
 
 ## Homeworks
 
