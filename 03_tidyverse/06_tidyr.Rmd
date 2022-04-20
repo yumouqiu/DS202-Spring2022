@@ -9,7 +9,7 @@ output:
     theme: ribbon
 ---
 
-# Messy (2)
+## Messy (2)
 
 ## separate-1
 
@@ -82,9 +82,9 @@ no Messy 1? - problems of type Messy 1 are typically hard to detect and often up
   1. What is the total amount of campaign expenditure?
   2. What is the single largest cost in the campaign expenditures?
   3. What time frame does the campaign expenditure cover?
-  4. Plot geographic longitude and latitude. Do campaign expenditures stay in the State of IA? Investigate oddities.
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, eval = FALSE}
+campaign = read.csv("data/Iowa_Campaign_Expenditures.csv")
 campaign1 = campaign %>% separate(Date, into = c("month", "day", "year"))
 
 campaign11 = campaign1 %>% separate('City Coordinates', into = c("City1", "State1", "Zip1", "Latitude", "Longitude"))

@@ -18,11 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Avengers_%28Marvel_Comics%29_vol_3_num_38.jpg" class="cover" height=1500>
 <br>
 <br>
-<br>
-<br>
-<br>
 <p class="white" style="font-size:90px" align=center>
- Lab #4<br> Avengers' Perils
+ Practice #4<br> Avengers' Perils
 </p>
 
 
@@ -34,15 +31,12 @@ knitr::opts_chunk$set(echo = TRUE)
 - Tidying data (on Avengers' risks)
 - Fact checking some FiveThirtyEight statements
 - Create an R markdown file that contains all code to read the data and create the plots
-- Submit!
 
-
-# Find your team members
 
 ## github repository
 
 1. Log into github 
-2. Pick one team member to create a repository called 'lab4'. Make sure to initialize the repo with a README file. 
+2. Pick one team member to create a repository called 'practice4'. Make sure to initialize the repo with a README file. 
 3. Go into the settings of the repository and add your team members as collaborators
 
 ## Cloning the repo
@@ -78,13 +72,52 @@ Get the data into a format where the five columns for Death[1-5] are replaced by
 
 Similarly, deal with the returns of characters.
 
+```{r, eval=FALSE, echo=FALSE}
+library(tidyverse)
+av = read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/avengers/avengers.csv", stringsAsFactors = FALSE)
+names(av)
+
+av0 = av %>% filter(Name.Alias != "")
+av1 = av0 %>% gather(key = time, value = death, c(11, 13, 15, 17, 19)) %>% 
+  select(Name.Alias, time, death) %>%
+  mutate(time = parse_number(time))
+av2 = av0 %>% gather(key = time, value = return, c(12, 14, 16, 18, 20)) %>% 
+  select(Name.Alias, time, return) %>%
+  mutate(time = parse_number(time))
+av.neat = left_join(av1, av2, by = c("Name.Alias", "time"))
+
+av0 = av0 %>% filter(Name.Alias != "Vance Astrovik")
+av1 = av0 %>% gather(key = time, value = death, c(11, 13, 15, 17, 19)) %>% 
+  select(Name.Alias, time, death) %>%
+  mutate(time = parse_number(time))
+av2 = av0 %>% gather(key = time, value = return, c(12, 14, 16, 18, 20)) %>% 
+  select(Name.Alias, time, return) %>%
+  mutate(time = parse_number(time))
+av.neat = left_join(av1, av2, by = c("Name.Alias", "time"))
+```
+
+
+```{r}
+av.neat %>% group_by(time) %>% summarise(total.num = n(),
+                                         real.death = sum(death == "YES"), 
+                                         fake.death = sum(death == "NO"), 
+                                         missing = sum(death == ""))
+
+av.neat %>% filter(time == 1, death == "YES") %>% 
+  summarise(total.num = n(),
+            real.return = sum(return == "YES"), 
+            fake.return = sum(return == "NO"), 
+            missing = sum(return == ""))
+```
+
+
 ## Part two: Validation
 
 Each team member picks one of the statements in the FiveThirtyEight [analysis](https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/) and fact checks it based on the data. Use dplyr functionality whenever possible.
 
 Upload your answers and the code to the repository. Discuss and refine answers as a team.
 
-## Submission
+## Submission for Homework 9 (next week homework)
 
 In Canvas, submit an RMarkdown file (and the knitted html document) with: 
 
@@ -92,8 +125,4 @@ In Canvas, submit an RMarkdown file (and the knitted html document) with:
   b. a link to the github repo you were working in.
   c. code and answers to all of the questions.
   d. you can upload the data file, but you don't have to
-
-
-Due date: You have time until Monday at 10 pm to submit the final RMmarkdown file.
-
 

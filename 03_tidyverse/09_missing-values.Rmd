@@ -13,7 +13,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
-# Working with missing values
+
+## Working with missing values
 
 
 ## Missing values in R
@@ -56,16 +57,17 @@ na.omit(DF)
 
 - <span style="color:white">Are there any missing values in the dataset `box`?</span>
 - <span style="color:white">What are the values of `Rank` when `Rank.Last.Week` is missing?</span>
+- <span style="color:white">Why there are many missing in `Rank.Last.Week`?</span>
 - <span style="color:white">What is the dimension of the data set `box`, when removing all missing values with the function `na.omit`?</span>
 - <span style="color:white">Why does the following statement fail? <br>
 `box$Rank.Last.Week <- na.omit(box$Rank.Last.Week)` </span>
 
-```{r}
+```{r, echo=FALSE, eval=FALSE}
 library(classdata)
 sum(is.na(box))
 colSums(is.na(box))
 
-box %>% filter(is.na(Rank.Last.Week) == TRUE) %>% select(Rank, Rank.Last.Week)
+box %>% filter(is.na(Rank.Last.Week) == TRUE) %>% select(Rank, Rank.Last.Week, Week)
 
 dim(box)
 dim(na.omit(box))
