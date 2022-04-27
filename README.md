@@ -80,6 +80,10 @@
 
 04/27 [Lecture 6-2-web scraping II](06_web-scraping\02_purrr.html)
 
+### May
+
+05/02 [Lecture 7-1-image processing](07_plant-imaging\01_images.html)
+
 ## Homeworks
 
 01/26 [Homework 1](Homework\homework01.html)
