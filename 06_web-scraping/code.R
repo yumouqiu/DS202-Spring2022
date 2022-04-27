@@ -86,4 +86,53 @@ for (i in 1 : 10){
   Result = rbind(Result, data)
 }
 
+###### functions in R ######
+
+mymean = function(x, na.rm = F) {
+  if (na.rm == T) {x = na.omit(x)}
+  res = sum(x) / length(x)
+  return(res)
+}
+
+mymean(c(1 : 15, NA), na.rm = T)
+
+boxoffice_scraper <- function(url) {
+  library(rvest)
+  library(tidyverse)
+  html <- read_html(url)
+  tables <- html %>% html_table(fill=TRUE)
+  box <- tables[[2]]
+  names(box)[1:2] <- c("Rank", "Rank.Last.Week")
+  box <- box %>% mutate(
+    TotalGross = parse_number(TotalGross),
+    PerTheater = parse_number(PerTheater),
+    Theaters = parse_number(Theaters),
+    Gross = parse_number(Gross)
+  )
+  return(box)  
+}
+
+res = boxoffice_scraper("https://www.the-numbers.com/weekend-box-office-chart")
+
+html2 = read_html("https://www.the-numbers.com/weekend-box-office-chart")
+newurl = html2 %>% html_nodes(".previous a") %>% html_attr("href")
+paste0("https://www.the-numbers.com/", newurl)
+
+boxoffice_scraper(paste0("https://www.the-numbers.com/", newurl))
+
+##### write the previous codes in a loop to extract data for each weekend #####
+
+url = "https://www.the-numbers.com/weekend-box-office-chart"
+
+res = c()
+for (i in 1 : 10){
+  html2 = read_html(url)
+  data = boxoffice_scraper(url)
+  res = rbind(res, data)
+  newurl = html2 %>% html_nodes(".previous a") %>% html_attr("href")
+  url = paste0("https://www.the-numbers.com/", newurl)
+}
+
+
+
 
