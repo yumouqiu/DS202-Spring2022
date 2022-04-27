@@ -61,3 +61,29 @@ Result1 %>% ggplot(aes(x = Date,
             aes(x = ymd("2022/01/20"), 
                 y = log(Max_Gross), 
                 label = `Movie Title`))
+
+###### Web scrapping by CSS ###### 
+
+url0 = "http://www.baseball-reference.com/players/a/"
+html0 = read_html(url0)
+players = html0 %>% html_nodes("#div_players_ a") 
+players.name = players %>% html_text()
+players.link = players %>% html_attr(name = "href")
+
+h0 = "http://www.baseball-reference.com"
+url.player = paste0(h0, players.link)
+
+Result = c()
+for (i in 1 : 10){
+  url = url.player[i]
+  html1 = read_html(url)
+  
+  variables = html1 %>% html_nodes(".poptip strong") %>% html_text()
+  values = html1 %>% html_nodes(".stats_pullout p") %>% html_text()
+  values = parse_number(values[-1])
+  
+  data = data.frame(variable = variables, value = values, player = players.name[i])
+  Result = rbind(Result, data)
+}
+
+
